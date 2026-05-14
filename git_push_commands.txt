@@ -1,0 +1,22 @@
+# Git push commands to publish this repo to GitHub
+
+# 1) Create a new GitHub repository (replace <org-or-user> and <repo-name>)
+# Using GitHub CLI (recommended):
+gh repo create <org-or-user>/<repo-name> --public --source=. --remote=origin --push
+
+# OR using plain git + GitHub web:
+git init
+git add .
+git commit -m "Initial commit - DeepThought target company research deliverables"
+git branch -M main
+git remote add origin https://github.com/<your-username>/<repo-name>.git
+git push -u origin main
+
+# If you prefer SSH:
+git remote add origin git@github.com:<your-username>/<repo-name>.git
+git push -u origin main
+
+# Notes:
+# - Replace <your-username> and <repo-name> with your GitHub username and desired repository name.
+# - If using the GitHub CLI (`gh`), you'll be prompted to authenticate.
+# - Ensure the `.gitignore` includes any local virtualenvs or sensitive files before pushing.
